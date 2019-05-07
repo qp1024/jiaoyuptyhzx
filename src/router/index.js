@@ -12,7 +12,12 @@ export const constantRouterMap = [
   {path: '/index', component: () => import('../components/index/Index.vue'), meta: {title: '首页'}},
   {path: '/bulletin', component: () => import('../components/bulletin/Bulletin.vue'), meta: {title: '公告'}},
   {path: '/bulletin/detail', component: () => import('../components/bulletin/BulletinDetail.vue'), meta: { title: '公告详情' }},
-  {path: '/mine', component: () => import('../components/mine/Upload.vue')}
+  {path: '/mine', component: () => import('../components/mine/Home.vue'), children: [{
+    name: 'users',
+    path: '/users',
+    component: () => import('../components/mine/users.vue')
+  }
+]}
 ]
 
 // 动态路由
